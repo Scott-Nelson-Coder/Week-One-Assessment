@@ -162,29 +162,41 @@ console.log("Work days left:", days)
 
 // Need to come back and redue this part. I miss read the instruction
 
-let fujiTons = 0
+// let fujiTons = 0
 
+// for (let i = 0; i < fujiAcres.length; i++) {
+//     fujiTons += fujiAcres[i] * 6.5
+// }
+// console.log("Fuji apple:", fujiTons)
+
+let fujiTons = []
 for (let i = 0; i < fujiAcres.length; i++) {
-    fujiTons += fujiAcres[i] * 6.5
+    fujiAcres[i] *= 6.5
+    fujiTons.push(fujiAcres[i])
+
 }
-console.log("Fuji apple:", fujiTons)
+
+console.log("fuji Tons:", fujiTons,)
 
 
 
-let galaTons = 0
+
+let galaTons = []
 
 for (let i = 0; i < galaAcres.length; i++) {
-    galaTons += galaAcres[i] * 6.5
+    galaAcres[i] *= 6.5
+    galaTons.push(galaAcres[i])
 }
-console.log("Gala apple:", galaTons)
+console.log("Gala Tons:", galaTons)
 
 
-let pinkTons = 0
+let pinkTons = []
 
 for (let i = 0; i < pinkAcres.length; i++) {
-    pinkTons += pinkAcres[i] * 6.5
+    pinkAcres[i] *= 6.5
+    pinkTons.push(pinkAcres[i])
 }
-console.log("Pink apple:", pinkTons)
+console.log("Pink Tons:", pinkTons)
 
 
 
@@ -211,16 +223,42 @@ console.log("Pink apple:", pinkTons)
 
 
 
-// calculating out the weight in pounds
+// calculating out the weight in pounds 
 
-let fujiPounds = fujiTons * 2000
-console.log(fujiPounds,"Pounds")
 
-let galaPounds = galaTons * 2000
-console.log(galaPounds, "Pounds")
+const initialValue = 0;
+const sumWithInitial = fujiTons.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    initialValue
+);
 
-let pinkPounds = pinkTons * 2000
-console.log(pinkPounds,"Pounds")
+let fujiPounds = sumWithInitial * 2000
+console.log(fujiPounds)
+
+
+
+
+const initialValue2 = 0;
+const sumWithInitial2 = galaTons.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    initialValue
+);
+
+let galaPounds = sumWithInitial2 * 2000
+console.log(galaPounds)
+
+
+
+
+const initialValue3 = 0;
+const sumWithInitial3 = pinkTons.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    initialValue
+);
+
+let pinkPounds = sumWithInitial3 * 2000
+console.log(pinkPounds)
+
 
 
 
@@ -247,18 +285,18 @@ console.log(pinkPounds,"Pounds")
 
 
 
-// Calculating the pounds into a dollar amount
+//Calculating the pounds into a dollar amount
 
 let fujiProfit = fujiPounds * fujiPrice
-console.log("$",fujiProfit,)
+console.log("$", fujiProfit,)
 
 
 let galaProfit = galaPounds * galaPrice
-console.log("$",galaProfit,)
+console.log("$", galaProfit,)
 
 
 let pinkProfit = pinkPounds * pinkPrice
-console.log("$",pinkProfit)
+console.log("$", pinkProfit)
 
 
 
@@ -279,10 +317,10 @@ console.log("$",pinkProfit)
 
 
 
-// adding all of the apple profits together to find total Profits
+//adding all of the apple profits together to find total Profits
 
 totalProfit = fujiProfit + galaProfit + pinkProfit
 
-console.log("Total Profits:","$",totalProfit)
+console.log("Total Profits:", "$", totalProfit)
 
 
